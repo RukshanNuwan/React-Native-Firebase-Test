@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const FromButton = ({ buttonTitle, backgroundColor, ...rest }) => {
+const FromButton = ({ buttonTitle, backgroundColor, color, ...rest }) => {
   // Background Color
   return (
     <TouchableOpacity {...rest} style={[styles.button, { backgroundColor: backgroundColor }]}>
-      <Text style={styles.buttonText}>{buttonTitle}</Text>
+      <Text style={[styles.buttonText, { color: color }]}>{buttonTitle}</Text>
     </TouchableOpacity>
   );
 };
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: "#fff",
+    fontWeight: 'bold'
   },
 });
 

@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 
 import auth from "@react-native-firebase/auth";
 import { LoginManager, AccessToken } from "react-native-fbsdk";
+import { GoogleSignin } from "@react-native-community/google-signin";
 
 export const AuthContext = createContext();
 
@@ -36,6 +37,7 @@ export const AuthProvider = ({ children }) => {
         },
 
         // Logging Function
+        // Using Email & Password
         login: async (email, password) => {
           try {
             await auth().signInWithEmailAndPassword(email, password);
@@ -46,6 +48,7 @@ export const AuthProvider = ({ children }) => {
           }
         },
 
+        // Using Facebook
         fbLogin: async () => {
           try {
             // Attempt login with permissions
@@ -67,6 +70,22 @@ export const AuthProvider = ({ children }) => {
 
             // Sign-in the user with the credential
             await auth().signInWithCredential(facebookCredential);
+          } catch (e) {
+            console.log(e);
+          }
+        },
+
+        // Using Google Account
+        googleLogin: async () => {
+          try {
+            // Get the users ID token
+            const { idToken } = await GoogleSignin.signIn();
+
+            // Create a Google credential with the token
+            const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+            // Sign-in the user with the credential
+            await auth().signInWithCredential(googleCredential);
           } catch (e) {
             console.log(e);
           }

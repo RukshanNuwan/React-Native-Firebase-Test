@@ -10,7 +10,7 @@ const LoginForm = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const { login, fbLogin } = useContext(AuthContext);
+  const { login, fbLogin, googleLogin } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -38,6 +38,7 @@ const LoginForm = ({ navigation }) => {
         buttonTitle="Login"
         backgroundColor="teal"
         onPress={() => login(email, password)}
+        color="#fff"
       />
 
       {/*Login with FaceBook*/}
@@ -45,13 +46,15 @@ const LoginForm = ({ navigation }) => {
         buttonTitle="Login with Facebook"
         backgroundColor="#4267B2"
         onPress={() => fbLogin()}
+        color="#fff"
       />
 
       {/*Login with Google*/}
       <FormButton
         buttonTitle="Login with Google"
         backgroundColor="#DB4437"
-        onPress={() => alert("google button clicked")}
+        onPress={() => googleLogin()}
+        color="#fff"
       />
 
       {/*SignUp Link*/}

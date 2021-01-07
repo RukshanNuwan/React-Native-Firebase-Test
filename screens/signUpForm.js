@@ -9,7 +9,7 @@ import { AuthContext } from "../navigation/AuthProvider";
 const SignUpForm = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [confirmPassword, setConfirmPassword] = useState();
+  // const [confirmPassword, setConfirmPassword] = useState();
 
   const { register } = useContext(AuthContext);
 
@@ -35,19 +35,20 @@ const SignUpForm = () => {
         secureTextEntry={true}
       />
 
-      {/*Confirm Password*/}
-      <FormInput
-        labelValue={confirmPassword}
-        onChangeText={(userPassword) => setPassword(userPassword)}
-        placeholderText="Confirm Password"
-        secureTextEntry={true}
-      />
+      {/*/!*Confirm Password*!/*/}
+      {/*<FormInput*/}
+      {/*  labelValue={confirmPassword}*/}
+      {/*  onChangeText={(userPassword) => setPassword(userPassword)}*/}
+      {/*  placeholderText="Confirm Password"*/}
+      {/*  secureTextEntry={true}*/}
+      {/*/>*/}
 
       {/*Sign Up Button*/}
       <FormButton
         buttonTitle="Sign Up"
         backgroundColor="teal"
         onPress={() => register(email, password)}
+        color="#fff"
       />
     </View>
   );

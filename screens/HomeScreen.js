@@ -13,7 +13,12 @@ const HomeScreen = () => {
       <Text>Welcome</Text>
       <Text>Name - {user.displayName}</Text>
       <Text>Email - {user.email}</Text>
-      <FormButton buttonTitle="Logout" onPress={() => logout()}/>
+      <FormButton
+        buttonTitle="Logout"
+        onPress={() => logout()}
+        backgroundColor="lightgrey"
+        color="red"
+      />
       <Text>Successfully Logged</Text>
     </View>
   );
@@ -23,9 +28,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 
 export default HomeScreen;
