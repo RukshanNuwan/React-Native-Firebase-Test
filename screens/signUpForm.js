@@ -46,6 +46,7 @@ const SignUpForm = () => {
       {/*Sign Up Button*/}
       <FormButton
         buttonTitle="Sign Up"
+        backgroundColor="teal"
         onPress={() => register(email, password)}
       />
     </View>

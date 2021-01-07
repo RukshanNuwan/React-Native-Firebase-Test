@@ -1,9 +1,10 @@
 import React from "react";
-import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const FromButton = ({ buttonTitle, ...rest }) => {
+const FromButton = ({ buttonTitle, backgroundColor, ...rest }) => {
+  // Background Color
   return (
-    <TouchableOpacity {...rest} style={styles.button}>
+    <TouchableOpacity {...rest} style={[styles.button, {backgroundColor: backgroundColor}]}>
       <Text style={styles.buttonText}>{buttonTitle}</Text>
     </TouchableOpacity>
   );
@@ -15,12 +16,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginVertical: 15,
     borderRadius: 3,
-    backgroundColor: "teal",
   },
 
   buttonText: {
-    color: '#fff'
-  }
+    color: "#fff",
+  },
 });
 
 export default FromButton;

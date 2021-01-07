@@ -36,12 +36,14 @@ const LoginForm = ({ navigation }) => {
 
       <FormButton
         buttonTitle="Login"
+        backgroundColor="teal"
         onPress={() => login(email, password)}
       />
 
       {/*Login with FaceBook*/}
       <FormButton
         buttonTitle="Login with Facebook"
+        backgroundColor="#4267B2"
         onPress={() => fbLogin()}
       />
 
