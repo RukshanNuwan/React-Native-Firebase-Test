@@ -10,7 +10,7 @@ const LoginForm = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const {login} = useContext(AuthContext);
+  const { login, fbLogin } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
@@ -39,8 +39,14 @@ const LoginForm = ({ navigation }) => {
         onPress={() => login(email, password)}
       />
 
+      {/*Login with FaceBook*/}
+      <FormButton
+        buttonTitle="Login with Facebook"
+        onPress={() => fbLogin()}
+      />
+
       {/*SignUp Link*/}
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
         <Text>Don't have an account? SignUp</Text>
       </TouchableOpacity>
     </View>

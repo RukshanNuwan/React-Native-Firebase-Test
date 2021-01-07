@@ -46,9 +46,7 @@ const SignUpForm = () => {
       {/*Sign Up Button*/}
       <FormButton
         buttonTitle="Sign Up"
-        onPress={() =>
-          register(email, password)
-        }
+        onPress={() => register(email, password)}
       />
     </View>
   );
