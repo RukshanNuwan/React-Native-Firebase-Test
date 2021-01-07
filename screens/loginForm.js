@@ -47,8 +47,15 @@ const LoginForm = ({ navigation }) => {
         onPress={() => fbLogin()}
       />
 
+      {/*Login with Google*/}
+      <FormButton
+        buttonTitle="Login with Google"
+        backgroundColor="#DB4437"
+        onPress={() => alert("google button clicked")}
+      />
+
       {/*SignUp Link*/}
-      <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+      <TouchableOpacity style={styles.signUpLink} onPress={() => navigation.navigate("SignUp")}>
         <Text>Don't have an account? SignUp</Text>
       </TouchableOpacity>
     </View>
@@ -60,6 +67,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  signUpLink: {
+    marginTop: 20,
   },
 });
 
