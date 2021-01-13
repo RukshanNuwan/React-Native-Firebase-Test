@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 import { AuthContext } from "../navigation/AuthProvider";
 
 import FormButton from "../components/FormButton";
@@ -10,6 +10,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image style={styles.profileImage} source={{ uri: user.photoURL }} />
       <Text>Welcome</Text>
       <Text>Name - {user.displayName}</Text>
       <Text>Email - {user.email}</Text>
@@ -31,6 +32,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
+  profileImage: {
+    marginBottom: 20,
+    width: 100,
+    height: 100,
+  }
 });
 
 export default HomeScreen;
