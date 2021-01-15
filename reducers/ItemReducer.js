@@ -1,6 +1,6 @@
-export default function (state = initialState, action) {
+export default function (state = {}, action) {
     switch (action.type) {
-        case "ITEMS_FETCH":
+        case 'ITEMS_FETCH':
             console.log(action.payload);
             return {
                 ...state
