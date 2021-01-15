@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Button } from "react-native";
 import { AuthContext } from "../navigation/AuthProvider";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import FormButton from "../components/FormButton";
+import Items from "./Items";
+import Item from "./Item";
 
 const HomeScreen = () => {
   const { user, logout } = useContext(AuthContext);
@@ -21,9 +24,21 @@ const HomeScreen = () => {
         color="red"
       />
       <Text>Successfully Logged</Text>
+
+      <Button
+        title="Items"
+        color="teal"
+        onPress={() => this.props.navigation.navigate('Items')}
+      />
+      <AppStackNavigator />
     </View>
   );
 };
+
+const AppStackNavigator = createStackNavigator({
+  Items: Items,
+  Item: Item
+})
 
 const styles = StyleSheet.create({
   container: {
