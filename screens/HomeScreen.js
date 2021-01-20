@@ -22,10 +22,19 @@ const HomeScreen = ({ navigation }) => {
       />
       <Text>Successfully Logged</Text>
 
-      <Button
-        title="Go to User Screen"
-        onPress={() => navigation.navigate('User')}
-      />
+      <View style={styles.button}>
+        <Button
+          title="Go to User Screen"
+          onPress={() => navigation.navigate('User')}
+        />
+      </View>
+
+      <View style={styles.button}>
+        <Button
+          title="ToDo Screen"
+          onPress={() => navigation.navigate('Todo')}
+        />
+      </View>
     </View>
   );
 };
@@ -42,6 +51,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 100,
     height: 100,
+  },
+
+  button: {
+    marginBottom: 10
   }
 });
 
