@@ -125,7 +125,7 @@ export default class UserScreen extends Component {
             // AFTER RE-ORGANIZE
             // ******************
             .onSnapshot(documentSnapshots => {
-                let users = []
+                let users = [];
                 documentSnapshots.forEach(documentSnapshot => {
                     users.push(documentSnapshot.data());
                 });
