@@ -6,14 +6,13 @@ import { List } from 'react-native-paper';
 
 const TodoItem = ({ id, title, complete }) => {
 
-    toggleCompleted = async (itemId) => {
+    toggleCompleted = async (itemId, completedItem) => {
         // Update Function
-        // Update is not working when same item clicked
         await firestore()
             .collection('todos')
             .doc(itemId)
             .update({
-                complete: !complete
+                complete: !completedItem
             });
 
         // // Delete Function
@@ -27,7 +26,7 @@ const TodoItem = ({ id, title, complete }) => {
     return (
         <List.Item
             title={title}
-            onPress={() => toggleCompleted(id)}
+            onPress={() => toggleCompleted(id, complete)}
             left={props => (
                 <List.Icon {...props} icon={complete ? 'check' : 'close'} />
             )}
